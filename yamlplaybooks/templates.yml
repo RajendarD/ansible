@@ -1,0 +1,8 @@
+---
+- hosts: webserver
+  user: test
+  sudo: yes
+  gather_facts: yes
+  tasks: 
+    - name: copying template file
+      template: src=abc.conf.j2 dest=/tmp/abc.conf

@@ -1,0 +1,11 @@
+---
+- hosts: webserver
+  user: test
+  sudo: yes
+  tasks:
+    - name: installing packages throuth loops
+      yum: name={{item}} state=installed
+      with_items:
+        - curl
+        - telnet   
+        - lynx

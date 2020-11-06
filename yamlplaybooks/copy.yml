@@ -1,0 +1,7 @@
+---
+- hosts: webserver
+  user: test
+  sudo: yes
+  tasks:
+    - name: copying a file
+      copy: src=file1 dest=/tmp/file1

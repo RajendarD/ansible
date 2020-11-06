@@ -1,0 +1,19 @@
+---
+- hosts: webserver
+  user: test
+  sudo: yes
+  vars:
+    pkg1 : curl
+  vars_files:
+        - abc.yml
+  vars_prompt:
+        - prompt: enter package name
+          name: pkg3
+          private: yes 
+  tasks:
+    - name: installing package from variable
+      yum: name={{pkg1}} state=installed
+    - name: installing package from file
+      yum: name={{pkg2}} state=installed
+    - name: installing package from command line
+      yum: name={{pkg3}} state=installed

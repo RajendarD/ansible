@@ -1,0 +1,7 @@
+---
+- hosts: server6.abc.com
+  user: test
+  sudo: yes
+  tasks:
+    - name: downloading sth
+      get_url: url=http://www.google.com dest=/tmp
